@@ -1,0 +1,12 @@
+{
+  "aerogear" : {
+    "label": {
+      "topic": "This is my first message",
+      "url": "This is my second message"
+      "name": "This is my second message NAME"
+    },
+    "errors": {
+      "error": "Things did not work: Error"
+    }
+  }
+}
