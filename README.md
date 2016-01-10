@@ -1,6 +1,8 @@
 # node-red node for Push Notifications through Aerogear Unified Push Server
 Initial commits for a node-red node to send push notifications to devices through AeroGear Unified Push Server.
 
+    note: this is not an officially supported Aerogear node.
+
 # Usage
 ***NOTE: In the making***
 
