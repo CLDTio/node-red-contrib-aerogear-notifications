@@ -27,6 +27,7 @@ If you want to try it (at your own peril), clone/fork this repo and cd into it. 
       [] use the config object to inject settings in notifications file
       [] create some unit tests for notifications file
       [] strengthen the config validation function (isConfigCorrect).
+      [] change apikey = appid and secret = mastersecret to be consistent with node module
     [X] investigate packaging and publication to npm
     [X] investigate how to link to local npm package for development
     [X] investigate internationalisation

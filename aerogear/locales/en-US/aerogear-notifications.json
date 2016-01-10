@@ -1,7 +1,7 @@
 {
   "aerogear-notifications": {
     "label": {
-      "key": "Topic",
+      "key": "Key",
       "url": "URL",
       "secret": "Secret",
       "name": "Name"

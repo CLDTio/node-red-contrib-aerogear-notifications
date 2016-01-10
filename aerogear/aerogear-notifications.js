@@ -5,33 +5,21 @@
 module.exports = function(RED) {
   "use strict";
 
-  var notification = require('./notification');
-
   function Aerogear(n) {
+      var Notification = require('./notification'),
+          sender;
+
       RED.nodes.createNode(this, n);
 
       var node = this;
-      this.url = n.url;
-      this.key = n.key;
-      this.secret = n.secret;
+      var settings = {
+        url: n.url,
+        applicationId: n.key,
+        masterSecret: n.secret
+      };
 
-      function isConfigCorrect() {
-        //TODO (jos) make sure that URL is an URL and the other two have at least a number of characters
-        return !node.url || !node.key || !node.secret;
-      }
-
-      if (isConfigCorrect()){
-        var msg = {};
-        msg.payload = RED._('aerogear-notifications.errors.bad_config_args');
-        this.send(msg);
-        //TODO (jos) how to pass this message to the UI?
-        console.log('CANNOT CONFIGURE AEROGEAR NODE');
-        console.log(RED._('aerogear-notifications.errors.bad_config_args'));
-      }
-      else {
-        //TODO (jos) require notification only here, and not on top, and inject settings as an object.
-        // Actually, Maybe isConfigCorrect is the responsibility of notification.js and only after passing we set the settings?
-        // That way I can actually make unit tests for it and for the injection.
+      try {
+        sender = new Notification(settings);
         var msg = {};
         msg.key = this.key;
         msg.payload = RED._("aerogear-notifications.info.setup");
@@ -40,7 +28,7 @@ module.exports = function(RED) {
 
         this.on('input', function (msg) {
           node.warn("Original payload: " + msg.payload);
-          notification.sendMessage(null, function(err, result){
+          sender.sendMessage(null, function(err, result){
             if (err) {
               msg.payload = JSON.stringify(err);
               return node.send(msg);
@@ -49,6 +37,13 @@ module.exports = function(RED) {
             node.send(msg);
           });
         });
+      }
+      catch(exception) {
+        var msg = {};
+        msg.payload = RED._('aerogear-notifications.errors.bad_config_args');
+        this.send(msg);
+        //TODO (jos) how to pass this message to the UI?
+        console.log(RED._('aerogear-notifications.errors.bad_config_args'));
       }
 
       this.on("close", function() {

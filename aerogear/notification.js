@@ -1,15 +1,26 @@
-var agSender = require( "unifiedpush-node-sender" ),
-    settings = {
-      url: "",
-      applicationId: "",
-      masterSecret: ""
-    };
+'use strict';
 
-//TODO (jos) it may be a good idea to have a Constructor function with a
-//settings object? This is going to change anyway when reading settings from UI
-var sender = agSender.Sender(settings);
+var agSender = require( "unifiedpush-node-sender" );
 
-function sendMessage(message, cb) {
+const ERROR_SETTINGS = 'Settings for Notification are not correct.';
+var sender;
+
+function Notification(settings){
+
+  try {
+    sender = agSender.Sender(settings);
+  }
+  catch (exception) {
+    console.error(exception);
+    //The module returns an String instead of an Error
+    throw new Error(exception);
+  }
+
+}
+
+Notification.prototype.sendMessage = function(message, cb) {
+
+  if (!sender) return cb(new Error(ERROR_SETTINGS));
 
   if (!message){
     message = {};
@@ -27,7 +38,4 @@ function sendMessage(message, cb) {
 
 };
 
-module.exports = {
-  sendMessage: sendMessage
-};
-
+module.exports = Notification;
