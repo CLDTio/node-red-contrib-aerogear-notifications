@@ -17,9 +17,14 @@ If you want to try it (at your own peril), clone/fork this repo and cd into it. 
     [] create the node-red html front
       [] decide on inputs and how to handle config file
       [X] how to trigger the action with an inject block
-      [] pass the url/key/secret to the js file (settings file?)
       [X] create a proper configuration dialog for the node
       [] figure out if the message is going to come as a payload, or something else
+    [] finish functionality in js files
+      [] pass the url/key/secret to the js file (settings file?)
+      [] move isConfigCorrect to notifications file
+      [] use the config object to inject settings in notifications file
+      [] create some unit tests for notifications file
+      [] strengthen the config validation function (isConfigCorrect).
     [X] investigate packaging and publication to npm
     [X] investigate how to link to local npm package for development
     [X] investigate internationalisation
