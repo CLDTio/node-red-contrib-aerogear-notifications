@@ -18,11 +18,13 @@ If you want to try it (at your own peril), clone/fork this repo and cd into it. 
       [] decide on inputs and how to handle config file
       [X] how to trigger the action with an inject block
       [] pass the url/key/secret to the js file (settings file?)
-      [] create a proper configuration dialog for the node
+      [X] create a proper configuration dialog for the node
+      [] figure out if the message is going to come as a payload, or something else
     [X] investigate packaging and publication to npm
     [X] investigate how to link to local npm package for development
-    [] investigate internationalisation
+    [X] investigate internationalisation
     [] investigate why the node appears in black (seems to be some issues)
 
+***On the other side*** I need to prepare something or link to a starter app project for aerogear.
 
 Jos - January 2016

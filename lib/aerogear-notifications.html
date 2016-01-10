@@ -1,29 +1,29 @@
 <script type="text/x-red" data-template-name="aerogear">
-   <!-- data-template-name identifies the node type this is for              -->
-
-   <!-- Each of the following divs creates a field in the edit dialog.       -->
-   <!-- Generally, there should be an input for each property of the node.   -->
-   <!-- The for and id attributes identify the corresponding property        -->
-   <!-- (with the 'node-input-' prefix).                                     -->
-   <!-- The available icon classes are defined Font Awesome Icons (FA Icons) -->
-    <div class="form-row">
-        <label for="node-input-topic"><i class="fa fa-tasks"></i>
-            <span data-i18n="aerogear-notifications.label.topic"></span>
-        </label>
-        <input type="text" id="node-input-topic" data-i18n="[placeholder]aerogear-notifications.label.topic">
-    </div>
-    <br/>
 
     <div class="form-row">
-        <label for="node-input-url"><i class="fa fa-tasks"></i>
+        <label for="node-input-url"><i class="fa fa-server"></i>
             <span data-i18n="aerogear-notifications.label.url"></span>
         </label>
         <input type="text" id="node-input-url" data-i18n="[placeholder]aerogear-notifications.label.url">
     </div>
     <br/>
 
-    <!-- By convention, most nodes have a 'name' property. The following div -->
-    <!-- provides the necessary field. Should always be the last option      -->
+    <div class="form-row">
+        <label for="node-input-key"><i class="fa fa-key"></i>
+            <span data-i18n="aerogear-notifications.label.key"></span>
+        </label>
+        <input type="text" id="node-input-key" data-i18n="[placeholder]aerogear-notifications.label.key">
+    </div>
+    <br/>
+
+    <div class="form-row">
+        <label for="node-input-secret"><i class="fa fa-user-secret"></i>
+            <span data-i18n="aerogear-notifications.label.secret"></span>
+        </label>
+        <input type="text" id="node-input-secret" data-i18n="[placeholder]aerogear-notifications.label.secret">
+    </div>
+    <br/>
+
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i>
             <span data-i18n="aerogear-notifications.label.name"></span>
@@ -33,14 +33,9 @@
 </script>
 
 
-<!-- Next, some simple help text is provided for the node.                   -->
 <script type="text/x-red" data-help-name="aerogear">
-   <!-- data-help-name identifies the node type this help is for             -->
-   <!-- This content appears in the Info sidebar when a node is selected     -->
-   <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
-   <!-- node in the palette.                                                 -->
    <p>Send Push notifications with Aerogear Unified Push Server</p>
-   <!-- TODO (jos): modify the following content.                            -->
+
    <p>Outputs an object called <b>msg</b> containing <b>msg.topic</b> and
    <b>msg.payload</b>. msg.payload is a String.</p>
 </script>
@@ -52,7 +47,8 @@
         category: 'input',      // TODO (jos) change category
         defaults: {             // defines the editable properties of the node
             name: {value:""},   //  along with default values.
-            topic: {value:"", required:true},
+            secret: {value:"", required:true},
+            key: {value:"", required:true},
             url: {value:"", required:true}
         },
         inputs:1,               // set the number of inputs - only 0 or 1
@@ -60,7 +56,7 @@
         // set the icon (held in icons dir below where you save the node)
         icon: "myicon.png",     // saved in  icons/myicon.png
         label: function() {     // sets the default label contents
-            return this.name || this.topic || "aerogear";
+            return this.name || "aerogear";
         },
         labelStyle: function() { // sets the class to apply to the label
             return this.name?"node_label_italic":"";
