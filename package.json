@@ -10,7 +10,7 @@
   ],
   "node-red": {
     "nodes": {
-      "aerogear-notifications": "lib/aerogear.js"
+      "aerogear-notifications": "lib/aerogear-notifications.js"
     }
   },
   "author": "jos <josmasflores@gmail.com>",

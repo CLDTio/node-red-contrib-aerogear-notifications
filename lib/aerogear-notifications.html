@@ -1,4 +1,4 @@
-<script type="text/x-red" data-template-name="aerogear-notifications">
+<script type="text/x-red" data-template-name="aerogear">
    <!-- data-template-name identifies the node type this is for              -->
 
    <!-- Each of the following divs creates a field in the edit dialog.       -->
@@ -10,15 +10,15 @@
         <label for="node-input-topic"><i class="fa fa-tasks"></i>
             <span data-i18n="aerogear-notifications.label.topic"></span>
         </label>
-        <input type="text" id="node-input-topic" placeholder="Topic">
+        <input type="text" id="node-input-topic" data-i18n="[placeholder]aerogear-notifications.label.topic">
     </div>
     <br/>
 
     <div class="form-row">
         <label for="node-input-url"><i class="fa fa-tasks"></i>
-            <span data-i18n="label.url"></span>
+            <span data-i18n="aerogear-notifications.label.url"></span>
         </label>
-        <input type="text" id="node-input-url" data-i18n="[placeholder]aerogear.label.url">
+        <input type="text" id="node-input-url" data-i18n="[placeholder]aerogear-notifications.label.url">
     </div>
     <br/>
 
@@ -26,15 +26,15 @@
     <!-- provides the necessary field. Should always be the last option      -->
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i>
-            <span data-i18n="aerogear.label.name"></span>
+            <span data-i18n="aerogear-notifications.label.name"></span>
         </label>
-        <input type="text" id="node-input-name" placeholder="Name">
+        <input type="text" id="node-input-name" data-i18n="[placeholder]aerogear-notifications.label.name">
     </div>
 </script>
 
 
 <!-- Next, some simple help text is provided for the node.                   -->
-<script type="text/x-red" data-help-name="aerogear-notifications">
+<script type="text/x-red" data-help-name="aerogear">
    <!-- data-help-name identifies the node type this help is for             -->
    <!-- This content appears in the Info sidebar when a node is selected     -->
    <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
@@ -48,7 +48,7 @@
 <!-- Finally, the node type is registered along with all of its properties   -->
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
-    RED.nodes.registerType('aerogear-notifications',{
+    RED.nodes.registerType('aerogear',{
         category: 'input',      // TODO (jos) change category
         defaults: {             // defines the editable properties of the node
             name: {value:""},   //  along with default values.
@@ -60,7 +60,7 @@
         // set the icon (held in icons dir below where you save the node)
         icon: "myicon.png",     // saved in  icons/myicon.png
         label: function() {     // sets the default label contents
-            return this.name||this.topic||"aerogear-notifications";
+            return this.name || this.topic || "aerogear";
         },
         labelStyle: function() { // sets the class to apply to the label
             return this.name?"node_label_italic":"";

@@ -1,0 +1,12 @@
+{
+  "aerogear-notifications": {
+    "label": {
+      "topic": "Topic",
+      "url": "URL",
+      "name": "Name"
+    },
+    "errors": {
+      "error": "Error: Something went wrong."
+    }
+  }
+}
