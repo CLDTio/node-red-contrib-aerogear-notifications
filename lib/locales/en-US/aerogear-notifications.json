@@ -6,8 +6,12 @@
       "secret": "Secret",
       "name": "Name"
     },
+    "info": {
+      "setup": "The Aerogear node is setting up"
+    },
     "errors": {
-      "error": "Error: Something went wrong."
+      "error": "Error: Something went wrong.",
+      "bad_config_args": "The Aerogear node CANNOT be set up! Missing Url or Key or Secret."
     }
   }
 }

@@ -23,7 +23,8 @@ If you want to try it (at your own peril), clone/fork this repo and cd into it. 
     [X] investigate packaging and publication to npm
     [X] investigate how to link to local npm package for development
     [X] investigate internationalisation
-    [] investigate why the node appears in black (seems to be some issues)
+    [X] investigate why the node appears in black (seems to be some issues)
+    [] investigate how to pass messages to the UI (e.g when node cannot be configured).
 
 ***On the other side*** I need to prepare something or link to a starter app project for aerogear.
 
