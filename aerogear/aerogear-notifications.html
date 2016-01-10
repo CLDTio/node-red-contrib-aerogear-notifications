@@ -9,18 +9,18 @@
     <br/>
 
     <div class="form-row">
-        <label for="node-input-key"><i class="fa fa-key"></i>
-            <span data-i18n="aerogear-notifications.label.key"></span>
+        <label for="node-input-appId"><i class="fa fa-key"></i>
+            <span data-i18n="aerogear-notifications.label.appId"></span>
         </label>
-        <input type="text" id="node-input-key" data-i18n="[placeholder]aerogear-notifications.label.key">
+        <input type="text" id="node-input-appId" data-i18n="[placeholder]aerogear-notifications.label.appId">
     </div>
     <br/>
 
     <div class="form-row">
-        <label for="node-input-secret"><i class="fa fa-user-secret"></i>
-            <span data-i18n="aerogear-notifications.label.secret"></span>
+        <label for="node-input-masterSecret"><i class="fa fa-user-secret"></i>
+            <span data-i18n="aerogear-notifications.label.masterSecret"></span>
         </label>
-        <input type="text" id="node-input-secret" data-i18n="[placeholder]aerogear-notifications.label.secret">
+        <input type="text" id="node-input-masterSecret" data-i18n="[placeholder]aerogear-notifications.label.masterSecret">
     </div>
     <br/>
 
@@ -48,8 +48,8 @@
         color: 'rgb(215, 215, 160)',
         defaults: {
             name: {value: ""},
-            secret: {value: "", required: true},
-            key: {value: "", required: true},
+            masterSecret: {value: "", required: true},
+            appId: {value: "", required: true},
             url: {value: "", required: true}
         },
         inputs: 1,

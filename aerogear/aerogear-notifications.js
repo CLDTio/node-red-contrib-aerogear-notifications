@@ -14,8 +14,8 @@ module.exports = function(RED) {
       var node = this;
       var settings = {
         url: n.url,
-        applicationId: n.key,
-        masterSecret: n.secret
+        applicationId: n.appId,
+        masterSecret: n.masterSecret
       };
 
       try {

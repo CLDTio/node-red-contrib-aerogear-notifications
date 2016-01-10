@@ -1,9 +1,9 @@
 {
   "aerogear-notifications": {
     "label": {
-      "key": "Key",
+      "appId": "Application Id",
       "url": "URL",
-      "secret": "Secret",
+      "masterSecret": "Master Secret",
       "name": "Name"
     },
     "info": {

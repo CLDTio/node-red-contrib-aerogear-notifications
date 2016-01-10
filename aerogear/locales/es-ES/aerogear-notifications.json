@@ -1,13 +1,17 @@
 {
   "aerogear-notifications" : {
     "label": {
-      "key": "Topic",
+      "appId": "Application Id",
       "url": "URL",
-      "secret": "Secret",
+      "masterSecret": "Master Secret",
       "name": "Name"
     },
+    "info": {
+      "setup": "El nodo Aerogear se está inicializando"
+    },
     "errors": {
-      "error": "Error: Something went wrong."
+      "error": "Error: Algo inesperado ha ocurrido.",
+      "bad_config_args": "El nodo Aerogear no se puede inicializar! La Url, Id o Secret no existen."
     }
   }
 }
