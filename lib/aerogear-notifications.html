@@ -44,15 +44,16 @@
 <!-- The example below shows a small subset of the properties that can be set-->
 <script type="text/javascript">
     RED.nodes.registerType('aerogear',{
-        category: 'input',      // TODO (jos) change category
-        defaults: {             // defines the editable properties of the node
-            name: {value:""},   //  along with default values.
-            secret: {value:"", required:true},
-            key: {value:"", required:true},
-            url: {value:"", required:true}
+        category: 'output',
+        color: 'rgb(215, 215, 160)',
+        defaults: {
+            name: {value: ""},
+            secret: {value: "", required: true},
+            key: {value: "", required: true},
+            url: {value: "", required: true}
         },
-        inputs:1,
-        outputs:1,
+        inputs: 1,
+        outputs: 1,
         icon: "gears.png",
         label: function() {
             return this.name || "aerogear";
