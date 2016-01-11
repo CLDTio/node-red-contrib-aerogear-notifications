@@ -3,6 +3,7 @@
 var agSender = require( "unifiedpush-node-sender" );
 
 const ERROR_SETTINGS = 'Settings for Notification are not correct.';
+const ERROR_NO_MESSAGE = 'No message payload; Nothing to send.';
 var sender;
 
 function Notification(settings){
@@ -12,30 +13,27 @@ function Notification(settings){
   }
   catch (exception) {
     console.error(exception);
-    //The module returns an String instead of an Error
+    //The module returns a String instead of an Error
     throw new Error(exception);
   }
-
 }
 
 Notification.prototype.sendMessage = function(message, cb) {
 
+  var newMessage = {},
+      options = {};
+
   if (!sender) return cb(new Error(ERROR_SETTINGS));
 
-  if (!message){
-    message = {};
-    message.alert = 'Alert message goes here';
-  }
+  if (!message || !message.payload) return cb(new Error(ERROR_NO_MESSAGE));
 
-  var options = {};
-
-  sender.send( message, options, function( err, response ) {
+  newMessage.alert = (message.payload).toString();
+  sender.send( newMessage, options, function( err, response ) {
     if (err) return cb(err);
 
     console.log( "success, calling the callback: ", response );
     return cb(null, response);
   });
-
 };
 
 module.exports = Notification;

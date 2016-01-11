@@ -23,9 +23,10 @@ If you want to try it (at your own peril), or want to contribute to development,
         [] Can I include an output for err and other for messages/success?
       [X] how to trigger the action with an inject block
       [X] create a proper configuration dialog for the node
-      [] figure out if the message is going to come as a payload, or something else
-        [] Most likely it should be an object with things like at least a title and body.
+      [X] figure out if the message is going to come as a payload, or something else
+        [X] Most likely it should be an object with things like at least a title and body.
            To investigate this I am going to create a Client app now (on Android).
+           FOR NOW it is just going to send msg.payload (can be changed in the future)
     [] finish functionality in js files
       [X] pass the url/key/secret to the js file (settings file?)
       [X] move isConfigCorrect to notifications file

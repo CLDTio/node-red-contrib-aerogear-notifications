@@ -28,7 +28,7 @@ module.exports = function(RED) {
 
         this.on('input', function (msg) {
           node.warn("Original payload: " + msg.payload);
-          sender.sendMessage(null, function(err, result){
+          sender.sendMessage(msg, function(err, result){
             if (err) {
               msg.payload = JSON.stringify(err);
               return node.send(msg);
