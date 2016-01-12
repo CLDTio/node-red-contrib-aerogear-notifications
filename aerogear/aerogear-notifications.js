@@ -10,6 +10,17 @@ module.exports = function(RED) {
           sender;
 
       RED.nodes.createNode(this, n);
+      //TODO (jos) extract a function to setStatus(context, message)
+      if (!n.url || !n.appId || !n.masterSecret){
+        this.status({
+          fill:"red",
+          shape: "ring",
+          text: RED._('aerogear-notifications.errors.bad_config_args')
+        });
+      }
+      else {
+        this.status({});
+      }
 
       var node = this;
       var settings = {
@@ -24,26 +35,39 @@ module.exports = function(RED) {
         msg.key = this.key;
         msg.payload = RED._("aerogear-notifications.info.setup");
         this.send(msg);
-        console.log(RED._("aerogear-notifications.info.setup"));
 
         this.on('input', function (msg) {
           node.warn("Original payload: " + msg.payload);
           sender.sendMessage(msg, function(err, result){
             if (err) {
               msg.payload = JSON.stringify(err);
+              node.status({
+                fill:"red",
+                shape: "dot",
+                text: msg.payload
+              });
               return node.send(msg);
             }
             msg.payload = result;
             node.send(msg);
+            node.status({
+              fill:"green",
+              shape: "dot",
+              text: RED._('aerogear-notifications.info.delivered')
+            });
+            setTimeout(function(){node.status({});}, 3000);
           });
         });
       }
       catch(exception) {
         var msg = {};
         msg.payload = RED._('aerogear-notifications.errors.bad_config_args');
+        this.status({
+          fill:"red",
+          shape: "ring",
+          text: msg.payload
+        });
         this.send(msg);
-        //TODO (jos) how to pass this message to the UI?
-        console.log(RED._('aerogear-notifications.errors.bad_config_args'));
       }
 
       this.on("close", function() {

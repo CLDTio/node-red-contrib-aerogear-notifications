@@ -39,7 +39,8 @@ If you want to try it (at your own peril), or want to contribute to development,
     [X] investigate internationalisation
       [] figure out a way to test the different languages
     [X] investigate why the node appears in black (seems to be some issues)
-    [] investigate how to pass messages to the UI (e.g when node cannot be configured).
+    [X] investigate how to pass messages to the UI (e.g when node cannot be configured).
+      [X] this can be done with the Status API.
 
 ***On the client side:*** I need to prepare something or link to a starter app project for aerogear.
 

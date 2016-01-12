@@ -7,7 +7,8 @@
       "name": "Name"
     },
     "info": {
-      "setup": "El nodo Aerogear se está inicializando"
+      "setup": "El nodo Aerogear se está inicializando",
+      "delivered": "Mensaje enviado"
     },
     "errors": {
       "error": "Error: Algo inesperado ha ocurrido.",
