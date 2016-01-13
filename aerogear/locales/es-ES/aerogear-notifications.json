@@ -12,7 +12,7 @@
     },
     "errors": {
       "error": "Error: Algo inesperado ha ocurrido.",
-      "bad_config_args": "El nodo Aerogear no se puede inicializar! La Url, Id o Secret no existen."
+      "bad_config_args": "El nodo Aerogear no se puede inicializar! La Url, AppId o Secret no existen."
     }
   }
 }

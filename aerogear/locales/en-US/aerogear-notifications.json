@@ -12,7 +12,7 @@
     },
     "errors": {
       "error": "Error: Something went wrong.",
-      "bad_config_args": "The Aerogear node CANNOT be set up! Missing Url or Key or Secret."
+      "bad_config_args": "The Aerogear node CANNOT be set up! Missing Url or AppId or Secret."
     }
   }
 }
