@@ -1,5 +1,5 @@
 # node-red node for Push Notifications through Aerogear Unified Push Server
-Initial commits for a node-red node to send push notifications to devices through AeroGear Unified Push Server.
+Initial commits for a node-red node to send push notifications to Android devices through AeroGear Unified Push Server.
 
     DISCLAIMER: This is not an officially supported Aerogear node.
                 I am in no way related to the Aerogear team.
@@ -18,9 +18,24 @@ If you want to try it (at your own peril), or want to contribute to development,
 **Note:** You will need to add *url* *applicationId* and *masterSecret* to the notification file. To do so, you'll need to install [UPS](https://aerogear.org/push/#unifiedpush) (locally or through OpenShift Online) and create an app. More information in the Usage section.
 
 # Usage
-This is a module to send Push Notifications to a mobile device. To do so, you will need to write such app. The Aerogear [getting started guide](https://aerogear.org/docs/unifiedpush/aerogear-push-android/guides/) provides an step by step account on how to do so.
+
+## the client app
+This is a module to send *Push Notifications* to a mobile device. To do so, you will need to write such an app. The Aerogear [getting started guide](https://aerogear.org/docs/unifiedpush/aerogear-push-android/guides/) provides an step by step account on how to do so.
 
 Note that you will not only have to setup the Unified Push Server, but you will also have to configure your GCM project in the Google developer console as explained in the [Aerogear guide](https://aerogear.org/docs/unifiedpush/aerogear-push-android/guides/).
+## the module
+Once you have an app ready, you can use the module as follows.
+
+### config
+
+[Screenshots and stuff here]
+
+### basic flow
+
+[Screenshots and stuff here]
+
+Link to a gist for a flow.
+
 
 # TODOs
 
@@ -55,5 +70,6 @@ Note that you will not only have to setup the Unified Push Server, but you will 
         [] How to use the module
         [] How to configure the module
         [] How to use the client (more like how to write a client)
+        [] Link with App Inventor component
 
 Jos - January 2016
