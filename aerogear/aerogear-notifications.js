@@ -7,7 +7,8 @@ module.exports = function(RED) {
 
   function Aerogear(n) {
       var Notification = require('./notification'),
-          sender;
+          sender,
+          msg = {};
 
       RED.nodes.createNode(this, n);
       //TODO (jos) extract a function to setStatus(context, message)
@@ -31,7 +32,7 @@ module.exports = function(RED) {
 
       try {
         sender = new Notification(settings);
-        var msg = {};
+        msg = {};
         msg.key = this.key;
         msg.payload = RED._("aerogear-notifications.info.setup");
         this.send(msg);
@@ -60,7 +61,7 @@ module.exports = function(RED) {
         });
       }
       catch(exception) {
-        var msg = {};
+        msg = {};
         msg.payload = RED._('aerogear-notifications.errors.bad_config_args');
         this.status({
           fill:"red",
