@@ -37,6 +37,7 @@ module.exports = function(RED) {
         msg.payload = RED._("aerogear-notifications.info.setup");
         this.send(msg);
 
+        //TODO (jos) Do I need this node to send? should it be a plain output node?
         this.on('input', function (msg) {
           node.warn("Original payload: " + msg.payload);
           sender.sendMessage(msg, function(err, result){
